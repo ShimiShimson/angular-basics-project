@@ -5,7 +5,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1>Recipe Name</h1>
+        <h1 *ngIf="recipeReceived">Recipe Name {{ recipeReceived.name }}</h1>
     </div>
 </div>
 <div class="row">
@@ -21,8 +21,8 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-12">
-        Description
+    <div class="col-xs-12"  *ngIf="recipeReceived">
+        Description {{ recipeReceived.description }}
     </div>
 </div>
 <div class="row">
