@@ -10,14 +10,18 @@ import { Recipe } from '../recipe.model';
 export class RecipeListComponent {
   recipes: Recipe[] = [
     new Recipe('Yummy Stuff', 'This is simply a test', 'https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_960_720.jpg'),
-    new Recipe('Delicous Dish', 'How to make --- Delicious Dish', 'https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_960_720.jpg')
+    new Recipe('Delicous Dish', 'How to make --- Delicious Dish', 'https://storage.needpix.com/rsynced_images/recipe-3836174_1280.jpg')
   ];
 
   @Output() recipe: Recipe;
   @Input() recipeReceived;
-  @Output() loadedRecipe = new EventEmitter<Recipe>();
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
 
-  onRecipeReceived(recipeReceived){
-    this.loadedRecipe.emit(recipeReceived)
+  // onRecipeReceived(recipeReceived){
+  //   this.recipeWasSelected.emit(recipeReceived)
+  // }
+
+  onRecipeSelected(recipe: Recipe){
+    this.recipeWasSelected.emit(recipe)
   }
 }

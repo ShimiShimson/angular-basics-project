@@ -8,11 +8,7 @@ import { Recipe } from './recipe.model';
 })
 export class RecipeBookComponent {
 
-  recipe: Recipe;
+  selectedRecipe: Recipe;
 
-  onRecipeReceived(recipe: Recipe): void{
-    this.recipe = recipe;
-
-  }
 
 }
