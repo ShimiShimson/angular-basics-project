@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
 
@@ -21,7 +21,6 @@ export class ShoppingListEditComponent implements OnInit {
     const ingAmount = this.amountInputReference.nativeElement.value;
     const ingredient = new Ingredient(ingName, ingAmount)
     console.log(ingredient)
-    this.shoppingListService.onIngredientReceived(ingredient)
+    this.shoppingListService.addIngredient(ingredient)
   }
-
 }
