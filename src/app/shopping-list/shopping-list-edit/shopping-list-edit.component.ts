@@ -19,8 +19,8 @@ export class ShoppingListEditComponent implements OnInit {
   onAddClick(nameInput: string, amountInput: number) {
     const ingName = this.nameInputReference.nativeElement.value;
     const ingAmount = this.amountInputReference.nativeElement.value;
-    const ingredient = new Ingredient(ingName, ingAmount)
-    console.log(ingredient)
-    this.shoppingListService.addIngredient(ingredient)
+    const ingredients: Ingredient[] = [];
+    ingredients.push(new Ingredient(ingName, ingAmount))
+    this.shoppingListService.addIngredients(ingredients)
   }
 }

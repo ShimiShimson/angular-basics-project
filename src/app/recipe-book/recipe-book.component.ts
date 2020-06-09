@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
 import { RecipeBookService } from './recipe-book.service';
 
@@ -10,6 +10,7 @@ import { RecipeBookService } from './recipe-book.service';
 })
 export class RecipeBookComponent implements OnInit{
   selectedRecipe: Recipe;
+  @Output() featureSelected = new EventEmitter<string>();
 
   constructor(private recipeBookService: RecipeBookService) {}
 
@@ -22,5 +23,7 @@ export class RecipeBookComponent implements OnInit{
       );
   }
 
-  
+  onFeatureReceived(feature: string) {
+    this.featureSelected.emit(feature);
+  }  
 }

@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
+// import { PassIngredientsService } from '../pass-ingredients.service';
+import { RecipeBookService } from '../recipe-book.service';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -8,5 +10,15 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipeDetailComponent {
   @Input() recipe: Recipe;
+  @Output() featureSelected = new EventEmitter<string>();
 
+  constructor(private recipeService: RecipeBookService) {}
+
+  // onSelect(feature: string) {
+  //   this.featureSelected.emit(feature);
+  //   this.passIngredientsService.displayIngredients(this.recipe);
+  // }
+  onAddToShoppingList() {
+    this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  }
 }
