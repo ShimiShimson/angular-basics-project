@@ -9,21 +9,21 @@ import { RecipeBookService } from './recipe-book.service';
   providers: [RecipeBookService]
 })
 export class RecipeBookComponent implements OnInit{
-  selectedRecipe: Recipe;
-  @Output() featureSelected = new EventEmitter<string>();
+  // selectedRecipe: Recipe;
+  // @Output() featureSelected = new EventEmitter<string>();
 
-  constructor(private recipeBookService: RecipeBookService) {}
+  // constructor(private recipeBookService: RecipeBookService) {}
 
   ngOnInit() {
-    this.recipeBookService.recipeEmitter
-      .subscribe(
-        (recipe: Recipe) => {
-          this.selectedRecipe = recipe;
-        }
-      );
+    // this.recipeBookService.recipeEmitter
+    //   .subscribe(
+    //     (recipe: Recipe) => {
+    //       this.selectedRecipe = recipe;
+    //     }
+    //   );
   }
 
-  onFeatureReceived(feature: string) {
-    this.featureSelected.emit(feature);
-  }  
+  // onFeatureReceived(feature: string) {
+  //   this.featureSelected.emit(feature);
+  // }  
 }

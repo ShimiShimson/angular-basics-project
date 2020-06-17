@@ -23,14 +23,18 @@ export class RecipeDetailComponent implements OnInit {
         .subscribe(
           (params: Params) => {
             this.id = +params['id'];
-            console.log(this.id);
             this.recipe = this.recipeService.getRecipe(this.id);
-            console.log(this.recipe);
           }
         )
     }
 
   onAddToShoppingList(): void {
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  }
+
+  onEditRecipe() {
+    this.router.navigate(['edit'], {relativeTo: this.route})
+    //Alternative more specified way:
+    // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 }

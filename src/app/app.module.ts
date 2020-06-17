@@ -16,6 +16,7 @@ import { PassIngredientsService } from './recipe-book/pass-ingredients.service';
 import { RecipeBookService } from './recipe-book/recipe-book.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.co
     RecipeDetailComponent,
     DropdownDirective,
     ErrorPageComponent,
-    RecipeStartComponent
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,

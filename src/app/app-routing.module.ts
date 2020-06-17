@@ -7,6 +7,7 @@ import { RecipeListComponent } from './recipe-book/recipe-list/recipe-list.compo
 import { RecipeItemComponent } from './recipe-book/recipe-list/recipe-item/recipe-item.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
 
 
 const appRoutes: Routes = [
@@ -15,8 +16,18 @@ const appRoutes: Routes = [
     path: 'recipe-book', 
     component: RecipeBookComponent, 
     children: [
-      { path: '', component: RecipeStartComponent},
-      { path: ':id', component: RecipeDetailComponent },
+      { 
+        path: '', component: RecipeStartComponent
+      },
+      {
+        path: 'new', component: RecipeEditComponent
+      },
+      { 
+        path: ':id', component: RecipeDetailComponent 
+      },
+      {
+        path: ':id/edit', component: RecipeEditComponent
+      },
       {
         path: 'recipe-list', component: RecipeListComponent, children: [
           { path: 'recipe-item', component: RecipeItemComponent }
