@@ -15,6 +15,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { PassIngredientsService } from './recipe-book/pass-ingredients.service';
 import { RecipeBookService } from './recipe-book/recipe-book.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     RecipeItemComponent,
     RecipeDetailComponent,
     DropdownDirective,
-    ErrorPageComponent
+    ErrorPageComponent,
+    RecipeStartComponent
   ],
   imports: [
     BrowserModule,

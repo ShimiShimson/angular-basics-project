@@ -6,14 +6,17 @@ import { RecipeDetailComponent } from './recipe-book/recipe-detail/recipe-detail
 import { RecipeListComponent } from './recipe-book/recipe-list/recipe-list.component';
 import { RecipeItemComponent } from './recipe-book/recipe-list/recipe-item/recipe-item.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.component';
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipe-book', pathMatch: 'full' },
   {
-    path: 'recipe-book', component: RecipeBookComponent, 
+    path: 'recipe-book', 
+    component: RecipeBookComponent, 
     children: [
-      { path: 'recipe-detail', component: RecipeDetailComponent },
+      { path: '', component: RecipeStartComponent},
+      { path: ':id', component: RecipeDetailComponent },
       {
         path: 'recipe-list', component: RecipeListComponent, children: [
           { path: 'recipe-item', component: RecipeItemComponent }
