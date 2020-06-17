@@ -12,7 +12,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class RecipeListComponent implements OnInit{
   @Output() recipe: Recipe;
   @Output() recipes: Recipe[];
-  // @Input() recipeReceived;
 
   constructor(
     private recipeBookService: RecipeBookService,
