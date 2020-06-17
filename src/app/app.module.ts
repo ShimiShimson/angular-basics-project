@@ -14,6 +14,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { PassIngredientsService } from './recipe-book/pass-ingredients.service';
 import { RecipeBookService } from './recipe-book/recipe-book.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RecipeBookService } from './recipe-book/recipe-book.service';
     RecipeListComponent,
     RecipeItemComponent,
     RecipeDetailComponent,
-    DropdownDirective
+    DropdownDirective,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
